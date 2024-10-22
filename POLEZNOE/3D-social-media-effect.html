@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #222;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+        gap: 50px;
+        background-color: var(--bg);
+      }
+
+      ul {
+        position: relative;
+        display: flex;
+        gap: 50px;
+      }
+      ul li {
+        position: relative;
+        list-style: none;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+
+        cursor: pointer;
+        transition: 0.5s;
+      }
+
+      ul li::before {
+        content: "";
+        position: absolute;
+        inset: 30px;
+        box-shadow: 0 0 0 10px var(--clr), 0 0 0 20px var(--bg),
+          0 0 0 22px var(--clr);
+        transition: 0.5s;
+      }
+
+      ul li::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--bg);
+        transform: rotate(45deg);
+        transition: 0.5s;
+      }
+
+      ul li a {
+        position: relative;
+        text-decoration: none;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      ul li a i {
+        font-size: 2rem;
+        transition: 0.5s;
+        color: var(--clr);
+      }
+
+      ul li:hover a i {
+        transform: translateY(-25%);
+      }
+      ul li a span {
+        position: absolute;
+        font-family: consolas;
+        color: var(--clr);
+        opacity: 0;
+        transition: 0.5s;
+        transform: scale(0);
+      }
+      ul li:hover a span {
+        opacity: 1;
+        transform: scale(1) translateY(100%);
+      }
+
+      /* effect01 */
+
+      ul.effect01 li:hover::before {
+        inset: 15px;
+      }
+      ul.effect01 li:hover::after {
+        inset: -10px;
+      }
+
+      ul.effect01 li:hover a i,
+      ul.effect01 li:hover a span {
+        filter: drop-shadow(0 0 20px var(--clr))
+          drop-shadow(0 0 40px var(--clr)) drop-shadow(0 0 60px var(--clr));
+      }
+
+      /* effect02 */
+      ul.effect02 li:hover::before {
+        inset: 15px;
+      }
+      ul.effect02 li:hover::after {
+        inset: 0px;
+        transform: rotate(0deg);
+      }
+
+      ul.effect02 li:hover a i,
+      ul.effect02 li:hover a span {
+        filter: drop-shadow(0 0 20px var(--clr))
+          drop-shadow(0 0 40px var(--clr)) drop-shadow(0 0 60px var(--clr));
+      }
+
+      /* effect03 */
+      ul.effect03 li:hover::before {
+        inset: 15px;
+      }
+      ul.effect03 li:hover::after {
+        inset: 0px;
+        transform: rotate(0deg);
+        background: var(--clr);
+      }
+
+      ul.effect03 li:hover a i,
+      ul.effect03 li:hover a span {
+        color: #fff;
+      }
+    </style>
+
+    <ul class="effect01">
+      <li style="--clr: #ff0000">
+        <a href=""><i class="fa-brands fa-youtube"></i><span>Youtube</span></a>
+      </li>
+      <li style="--clr: #1da1f2">
+        <a href=""
+          ><i class="fa-brands fa-x-twitter"></i><span>Twitter</span></a
+        >
+      </li>
+      <li style="--clr: #25d366">
+        <a href=""
+          ><i class="fa-brands fa-whatsapp"></i><span>Whatsapp</span></a
+        >
+      </li>
+    </ul>
+    <ul class="effect02">
+      <li style="--clr: #ff0000">
+        <a href=""><i class="fa-brands fa-youtube"></i><span>Youtube</span></a>
+      </li>
+      <li style="--clr: #1da1f2">
+        <a href=""
+          ><i class="fa-brands fa-x-twitter"></i><span>Twitter</span></a
+        >
+      </li>
+      <li style="--clr: #25d366">
+        <a href=""
+          ><i class="fa-brands fa-whatsapp"></i><span>Whatsapp</span></a
+        >
+      </li>
+    </ul>
+    <ul class="effect03">
+      <li style="--clr: #ff0000">
+        <a href=""><i class="fa-brands fa-youtube"></i><span>Youtube</span></a>
+      </li>
+      <li style="--clr: #1da1f2">
+        <a href=""
+          ><i class="fa-brands fa-x-twitter"></i><span>Twitter</span></a
+        >
+      </li>
+      <li style="--clr: #25d366">
+        <a href=""
+          ><i class="fa-brands fa-whatsapp"></i><span>Whatsapp</span></a
+        >
+      </li>
+    </ul>
+  </body>
+</html>
